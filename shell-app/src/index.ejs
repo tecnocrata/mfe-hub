@@ -10,6 +10,7 @@
   <meta name="author" content="name">
   <meta name="description" content="description here">
   <meta name="keywords" content="keywords,here">
+  <!-- <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:image/svg+xml*"> -->
 
   <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" type="text/css" rel="stylesheet">
@@ -54,6 +55,7 @@
   </script>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
   <!-- <script src="https://unpkg.com/zone.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
 
@@ -156,7 +158,7 @@
         class="md:mt-12 md:w-50 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
         <ul class="list-reset flex flex-row md:flex-col py-0 md:py-3 px-1 md:px-2 text-center md:text-left">
           <li class="mr-3 flex-1">
-            <a href="#"
+            <a href="#" onclick="singleSpaNavigate('/')"
               class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-pink-500">
               <i class="fa fa-home pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Welcome</span>

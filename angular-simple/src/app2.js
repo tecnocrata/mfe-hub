@@ -10,7 +10,7 @@ const ngLifecycles = singleSpaAngular({
   //domElementGetter,
   mainModule,
   angularPlatform: platformBrowserDynamic(),
-  template: `<app2 />`,
+  template: `<app-root />`,
   Router,
   ApplicationRef,
 });
