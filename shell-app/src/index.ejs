@@ -53,7 +53,7 @@
     }
   </script>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
-
+  <!-- <script src="https://unpkg.com/zone.js"></script> -->
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
 
@@ -62,7 +62,8 @@
     {
       "imports": {
         "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
-        "@tecnox/root-config": "//localhost:9000/tecnox-root-config.js"
+        "@tecnox/root-config": "//localhost:9000/tecnox-root-config.js",
+        "@tecnox/angular-application": "http://localhost:4202/main.js"
       }
     }
   </script>
@@ -169,7 +170,7 @@
             </a>
           </li>
           <li class="mr-3 flex-1">
-            <a href="#"
+            <a href="#" onclick="singleSpaNavigate('/angular-application')"
               class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
               <i class="fab fa-angular pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Application</span>
