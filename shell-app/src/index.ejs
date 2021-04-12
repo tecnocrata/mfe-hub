@@ -72,7 +72,8 @@
       "imports": {
         "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
         "@tecnox/root-config": "//localhost:9000/tecnox-root-config.js",
-        "@tecnox/angular-application": "http://localhost:4202/main.js"
+        "@tecnox/angular-application": "http://localhost:4202/main.js",
+        "@tecnox/angular-webcomponent": "http://localhost:4201/main.js"
       }
     }
   </script>
@@ -186,7 +187,7 @@
             </a>
           </li>
           <li class="mr-3 flex-1">
-            <a href="#"
+            <a href="#" onclick="singleSpaNavigate('/angular-webcomponent')"
               class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
               <i class="fab fa-angular pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">WebComponent</span>

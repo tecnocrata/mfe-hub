@@ -52,6 +52,8 @@
     }
   </script>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
+  <!-- <script src="https://unpkg.com/zone.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
 
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
@@ -152,7 +154,7 @@
         class="md:mt-12 md:w-50 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
         <ul class="list-reset flex flex-row md:flex-col py-0 md:py-3 px-1 md:px-2 text-center md:text-left">
           <li class="mr-3 flex-1">
-            <a href="#"
+            <a href="#" onclick="singleSpaNavigate('/')"
               class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-pink-500">
               <i class="fa fa-home pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Welcome</span>
@@ -166,7 +168,7 @@
             </a>
           </li>
           <li class="mr-3 flex-1">
-            <a href="#"
+            <a href="#" onclick="singleSpaNavigate('/angular-application')"
               class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
               <i class="fab fa-angular pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Application</span>
@@ -216,7 +218,7 @@
             </a>
           </li>
           <li class="mr-3 flex-1">
-            <a href="#"
+            <a href="#" onclick="singleSpaNavigate('/vuejs-module-federation')"
               class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
               <i class="fab fa-vuejs pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Module
@@ -233,7 +235,13 @@
 
     <div id="single-spa-application:@single-spa/welcome"
       class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5"></div>
-    <!-- <div id="app2" class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5"></div> -->
+    <div id="single-spa-application:@tecnox/angular-application"
+      class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5"></div>
+
+    <!-- <div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
+      <div id="single-spa-application:@single-spa/welcome"></div>
+      <div id="single-spa-application:@tecnox/angular-application"></div>
+    </div> -->
     <!-- </div> -->
   </div>
 

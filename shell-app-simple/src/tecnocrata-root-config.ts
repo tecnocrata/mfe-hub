@@ -9,6 +9,12 @@ registerApplication({
   activeWhen: ["/"],
 });
 
+registerApplication({
+  name: "@tecnox/angular-application",
+  app: () => System.import("http://localhost:4202/main.js"),
+  activeWhen: ["/angular-application"],
+});
+
 // registerApplication({
 //   name: "@tecnocrata/navbar",
 //   app: () => System.import("@tecnocrata/navbar"),
