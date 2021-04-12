@@ -7,7 +7,7 @@ import { Page2Component } from "./page2/page2.component";
 
 const routes: Routes = [
   {
-    path: "child2",
+    path: "angular-application",
     children: [
       /**
        * All routes specific to this app go here.
