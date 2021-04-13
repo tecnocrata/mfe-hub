@@ -16,6 +16,7 @@ module.exports = {
 
   output: {
     publicPath: "http://localhost:3002/",
+    // libraryTarget: "system",
   },
 
   resolve: {
@@ -24,6 +25,11 @@ module.exports = {
 
   devServer: {
     contentBase: outputPath,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "*",
+      "Access-Control-Allow-Methods": "*",
+    },
   },
 
   module: {

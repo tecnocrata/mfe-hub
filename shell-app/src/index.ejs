@@ -49,13 +49,19 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+        "vue": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js",
+        "vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.0.7/dist/vue-router.min.js"
       }
     }
   </script>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
   <!-- <script src="https://unpkg.com/zone.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script> -->
+
   <!-- <script src="https://cdn.jsdelivr.net/npm/@esm-bundle/angular__core@9.1.9/system/es2015/angular-core.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@esm-bundle/angular__common@9.1.9/system/es2015/angular-common.js"></script>
   <script
@@ -72,11 +78,10 @@
       "imports": {
         "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
         "@tecnox/root-config": "//localhost:9000/tecnox-root-config.js",
-        "@tecnox/angular-application": "http://localhost:4202/main.js",
-        "@tecnox/angular-webcomponent": "http://localhost:4201/main.js"
-      }
+        "@tecnox/angular-application": "http://localhost:4202/main.js"      }
     }
   </script>
+  <script src="http://localhost:3002/remoteEntry.js"></script>
   <% } %>
 
   <!--
@@ -230,7 +235,7 @@
             </a>
           </li>
           <li class="mr-3 flex-1">
-            <a href="#"
+            <a href="#" onclick="singleSpaNavigate('/vuejs-module-federation')"
               class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
               <i class="fab fa-vuejs pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Module
