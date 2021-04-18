@@ -15,6 +15,23 @@ registerApplication({
   activeWhen: ["/angular-application"],
 });
 
+console.log("Loading Module Federation!");
+
+// registerApplication(
+//   "body",
+//   // @ts-ignore
+//   () => import("body"),
+//   (location) => location.pathname.startsWith("/vuejs-module-federation")
+// );
+
+registerApplication({
+  name: "vue-module-federation",
+  // @ts-ignore
+  // app: () => import("http://localhost:3002/remoteEntry.js"),
+  app: () => import("vueapp/body"),
+  activeWhen: ["/vuejs-module-federation"],
+});
+
 // registerApplication({
 //   name: "@tecnocrata/navbar",
 //   app: () => System.import("@tecnocrata/navbar"),

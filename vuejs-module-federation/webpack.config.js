@@ -1,4 +1,5 @@
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+// const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 const outputPath = path.resolve(__dirname, "dist");
 const { VueLoaderPlugin } = require("vue-loader");
@@ -16,7 +17,7 @@ module.exports = {
 
   output: {
     publicPath: "http://localhost:3002/",
-    // libraryTarget: "system",
+    libraryTarget: "system",
   },
 
   resolve: {
@@ -69,11 +70,11 @@ module.exports = {
       name: "body",
       library: { type: "var", name: "body" },
       filename: "remoteEntry.js",
-      remotes: {},
+      // remotes: {},
       exposes: {
-        Body: "./src/app",
+        "./body": "./src/app",
       },
-      shared: ["vue", "single-spa", "single-spa-vue"],
+      shared: ["vue", "single-spa-vue"], //"single-spa",
     }),
   ],
 };

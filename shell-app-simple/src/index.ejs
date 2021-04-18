@@ -55,6 +55,7 @@
   <!-- <script src="https://unpkg.com/zone.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
 
@@ -62,7 +63,8 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "@tecnocrata/root-config": "//localhost:9000/tecnocrata-root-config.js"
+        "@tecnocrata/root-config": "//localhost:9000/tecnocrata-root-config.js",
+        "body":"http://localhost:3002/remoteEntry.js"
       }
     }
   </script>
@@ -235,9 +237,10 @@
 
     <div id="single-spa-application:@single-spa/welcome"
       class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5"></div>
-    <div id="single-spa-application:@tecnox/angular-application"
+    <!-- <div id="single-spa-application:@tecnox/angular-application"
+      class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5"></div> -->
+    <div id="single-spa-application:vue-module-federation"
       class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5"></div>
-
     <!-- <div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
       <div id="single-spa-application:@single-spa/welcome"></div>
       <div id="single-spa-application:@tecnox/angular-application"></div>
