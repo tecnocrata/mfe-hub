@@ -59,9 +59,7 @@
   <!-- <script src="https://unpkg.com/zone.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script> -->
-
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/@esm-bundle/angular__core@9.1.9/system/es2015/angular-core.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@esm-bundle/angular__common@9.1.9/system/es2015/angular-common.js"></script>
   <script
@@ -78,7 +76,9 @@
       "imports": {
         "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
         "@tecnox/root-config": "//localhost:9000/tecnox-root-config.js",
-        "@tecnox/angular-application": "http://localhost:4202/main.js"      }
+        "@tecnox/angular-application": "http://localhost:4202/main.js",
+        "body":"http://localhost:3002/remoteEntry.js"
+      }
     }
   </script>
 

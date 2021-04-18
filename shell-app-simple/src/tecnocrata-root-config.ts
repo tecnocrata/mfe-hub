@@ -27,7 +27,6 @@ console.log("Loading Module Federation!");
 registerApplication({
   name: "vue-module-federation",
   // @ts-ignore
-  // app: () => import("http://localhost:3002/remoteEntry.js"),
   app: () => import("vueapp/body"),
   activeWhen: ["/vuejs-module-federation"],
 });

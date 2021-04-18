@@ -1,6 +1,7 @@
 const { merge } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-ts");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = (webpackConfigEnv, argv) => {
   const orgName = "tecnox";
@@ -14,7 +15,24 @@ module.exports = (webpackConfigEnv, argv) => {
 
   return merge(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
+    output: {
+      //publicPath: "http://localhost:3001/",
+      libraryTarget: "system",
+    },
     plugins: [
+      new ModuleFederationPlugin({
+        name: "home",
+        library: { type: "var", name: "home" },
+        // library: { type: "system" },
+        // filename: "remoteEntry.js",
+        remotes: {
+          // 'home-nav': 'navigation',
+          // body: "body@http://localhost:3002/remoteEntry.js",
+          vueapp: "body",
+        },
+        // exposes: {},
+        // shared: [],
+      }),
       new HtmlWebpackPlugin({
         inject: false,
         template: "src/index.ejs",
