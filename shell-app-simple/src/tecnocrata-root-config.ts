@@ -15,7 +15,7 @@ registerApplication({
   activeWhen: ["/angular-application"],
 });
 
-console.log("Loading Module Federation!");
+// console.log("Loading Module Federation!");
 
 // registerApplication(
 //   "body",
