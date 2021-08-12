@@ -1,0 +1,41 @@
+.Avatar_avatar-container__Ix0VB {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #fb313b;
+}
+.Avatar_avatar__20bmQ {
+  height: 100%;
+  width: 100%;
+  opacity: 0.75;
+  filter: grayscale(100%);
+}
+.Avatar_is-online__168Uc {
+  border-color: #08e375;
+}
+.Avatar_is-online__168Uc .Avatar_avatar__20bmQ {
+  opacity: 1;
+  filter: none;
+}
+img {
+  border-radius: 50%;
+}
+.ContactItem_contact-item__11cW7 {
+  display: flex;
+  font-size: 16pt;
+  align-items: center;
+  cursor: pointer;
+}
+.ContactItem_contact-name__UP4ms {
+  margin-left: 1rem;
+}
+.ContactList_header__2eiKr {
+  font-size: 18pt;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.ContactList_list__1Sb_K div + div {
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid #5d6b75;
+}
