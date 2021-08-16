@@ -9916,239 +9916,55 @@
   this["webpackJsonpreact-contact-list"] || []).push([
   [0],
   {
-    1: function (t, e, a) {
+    1: function (t, n, a) {
       t.exports = {
         "avatar-container": "Avatar_avatar-container__Ix0VB",
         avatar: "Avatar_avatar__20bmQ",
         "is-online": "Avatar_is-online__168Uc",
       };
     },
-    19: function (t, e, a) {
+    19: function (t, n, a) {
       "use strict";
-      a.r(e),
-        a.d(e, "bootstrap", function () {
-          return E;
+      a.r(n),
+        a.d(n, "bootstrap", function () {
+          return i;
         }),
-        a.d(e, "mount", function () {
+        a.d(n, "mount", function () {
+          return s;
+        }),
+        a.d(n, "unmount", function () {
           return _;
-        }),
-        a.d(e, "unmount", function () {
-          return k;
         });
-      var n = a(0),
-        s = a.n(n),
-        r = a(2),
-        c = a.n(r);
-      var o = a(1),
-        i = a.n(o),
-        l = a(6);
-      class h extends s.a.Component {
-        render() {
-          let t = i.a["avatar-container"];
-          this.props.isOnline && (t += " " + i.a["is-online"]);
-          let e = 1e3 * Math.random(),
-            a = 1e3 * Math.random();
-          if (a > e) {
-            const t = e;
-            (e = a), (a = t);
-          }
-          const n = (function (t, e) {
-              let a, n, s;
-              const r = e / t,
-                c = ~~(6 * r),
-                o = 6 * r - c,
-                i = 1 - o;
-              switch (c % 6) {
-                case 0:
-                  (a = 1), (n = o), (s = 0);
-                  break;
-                case 1:
-                  (a = i), (n = 1), (s = 0);
-                  break;
-                case 2:
-                  (a = 0), (n = 1), (s = o);
-                  break;
-                case 3:
-                  (a = 0), (n = i), (s = 1);
-                  break;
-                case 4:
-                  (a = o), (n = 0), (s = 1);
-                  break;
-                case 5:
-                  (a = 1), (n = 0), (s = i);
-              }
-              return { r: 255 * a, g: 255 * n, b: 255 * s };
-            })(e, a),
-            r = new l(
-              `${this.props.name}${(function (t) {
-                let e = "";
-                const a =
-                    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-                  n = a.length;
-                for (let s = 0; s < t; s++)
-                  e += a.charAt(Math.floor(Math.random() * n));
-                return e;
-              })(15)}`,
-              {
-                foreground: [n.r, n.g, n.b],
-                background: [0, 0, 0, 0],
-                size: 200,
-              }
-            ).toString();
-          return s.a.createElement(
-            "div",
-            { className: t },
-            s.a.createElement("img", {
-              className: i.a.avatar,
-              src: "data:image/png;base64," + r,
-              alt: "Avatar of " + this.props.name,
-            })
-          );
-        }
-      }
-      var d = a(3),
-        m = a.n(d);
-      class p extends s.a.Component {
-        handleClick() {
-          this.props.onClick && this.props.onClick(this.props.item.username);
-        }
-        render() {
-          return s.a.createElement(
-            "div",
-            {
-              className: m.a["contact-item"],
-              onClick: () => this.handleClick(),
-            },
-            s.a.createElement(h, {
-              name: this.props.item.username,
-              isOnline: this.props.item.isOnline,
-            }),
-            s.a.createElement(
-              "span",
-              { className: m.a["contact-name"] },
-              this.props.item.username
-            )
-          );
-        }
-      }
-      var u = a(4),
-        f = a.n(u);
-      class v extends s.a.Component {
-        selectedContactClicked(t) {
-          this.props.onContactSelected && this.props.onContactSelected(t);
-        }
-        constructor(t) {
-          super(t), (this.hostRef = s.a.createRef());
-        }
-        componentDidMount() {
-          let t, e, a;
-          window.addEventListener("message", (n) => {
-            n.data &&
-              (n.data.expose
-                ? ((t = this.hostRef.current.style.border),
-                  (e = this.hostRef.current.style.margin),
-                  (a = this.hostRef.current.style.padding),
-                  (this.hostRef.current.style.border = "5px dashed blue"),
-                  (this.hostRef.current.style.margin = this.hostRef.current.style.padding =
-                    "0.5rem"))
-                : ((this.hostRef.current.style.border = t),
-                  (this.hostRef.current.style.margin = e),
-                  (this.hostRef.current.style.padding = a)));
-          });
-        }
-        render() {
-          return s.a.createElement(
-            "div",
-            { ref: this.hostRef },
-            s.a.createElement(
-              "header",
-              { className: f.a.header },
-              this.props.headerText || "Contact List"
-            ),
-            s.a.createElement(
-              "div",
-              { className: f.a.list },
-              (this.props.contacts || []).map((t, e) =>
-                s.a.createElement(p, {
-                  item: t,
-                  key: t.username,
-                  onClick: (t) => this.selectedContactClicked(t),
-                })
-              )
-            )
-          );
-        }
-      }
-      var b = a(7),
-        C = a.n(b);
-      !(function (t, e, a = [], n = []) {
-        class r extends HTMLElement {
-          constructor() {
-            super(),
-              a.forEach((t) =>
-                Object.defineProperty(this, t, {
-                  set: (e) => this.setterProxy(t, e),
-                })
-              ),
-              (this.events = n);
-          }
-          setterProxy(t, e) {
-            this.attributeChangedCallback(t, e, e);
-          }
-          connectedCallback() {
-            const e = [...this.attributes].reduce(
-                (t, e) => ({ ...t, [e.name]: e.value }),
-                { root: this }
-              ),
-              a = s.a.createElement(t, e);
-            this.assignEvents(a),
-              c.a.render(a, this),
-              (this.instance = a),
-              (this.props = e);
-          }
-          attributeChangedCallback(e, a, n) {
-            const { instance: r } = this;
-            if (!r) return;
-            const o = { ...this.props, [e]: n },
-              i = s.a.createElement(t, o);
-            this.assignEvents(i),
-              c.a.render(i, this),
-              (this.instance = i),
-              (this.props = o);
-          }
-          assignEvents(t) {
-            this.events.forEach(
-              (e) =>
-                (t.props[e] = (t) =>
-                  this.dispatchEvent(new CustomEvent(e, { detail: t })))
-            );
-          }
-        }
-        (r.observedAttributes = a), window.customElements.define(e, r);
-      })(
-        v,
-        "react-contact-list",
-        ["headerText", "contacts"],
-        ["onContactSelected"]
-      );
-      const g = C()({ template: "<react-contact-list></react-contact-list>" }),
-        E = g.bootstrap,
-        _ = g.mount,
-        k = g.unmount;
+      var o = a(0),
+        c = a.n(o);
+      a(2);
+      a(1), a(6);
+      c.a.Component;
+      a(3);
+      c.a.Component;
+      a(4);
+      c.a.Component;
+      var e = a(7);
+      const r = a.n(e)()({
+          template: "<react-contact-list></react-contact-list>",
+        }),
+        i = r.bootstrap,
+        s = r.mount,
+        _ = r.unmount;
     },
-    3: function (t, e, a) {
+    3: function (t, n, a) {
       t.exports = {
         "contact-item": "ContactItem_contact-item__11cW7",
         "contact-name": "ContactItem_contact-name__UP4ms",
       };
     },
-    4: function (t, e, a) {
+    4: function (t, n, a) {
       t.exports = {
         header: "ContactList_header__2eiKr",
         list: "ContactList_list__1Sb_K",
       };
     },
-    8: function (t, e, a) {
+    8: function (t, n, a) {
       t.exports = a(19);
     },
   },
