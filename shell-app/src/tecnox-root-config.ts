@@ -24,5 +24,11 @@ registerApplication({
   app: () => import("vueapp/body"),
   activeWhen: ["/vuejs-module-federation"],
 });
+registerApplication({
+  name: "angular11-module-federation",
+  // @ts-ignore
+  app: () => import("angular11app/Module"),
+  activeWhen: ["/a11-module-federation"],
+});
 layoutEngine.activate();
 start();
