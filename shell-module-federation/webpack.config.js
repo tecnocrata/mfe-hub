@@ -10,7 +10,7 @@ sharedMappings.register(path.join(__dirname, "tsconfig.json"), [
 
 module.exports = {
   output: {
-    uniqueName: "angular11ModuleFederation",
+    uniqueName: "shellModuleFederation",
     publicPath: "auto",
   },
   optimization: {
@@ -24,11 +24,17 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       // For remotes (please adjust)
-      name: "angular11ModuleFederation",
-      // library: { type: "var", name: "angular11ModuleFederation" },
-      filename: "remoteEntry.js",
-      exposes: {
-        "./FModule": "./src/app/flights/flights.module.ts",
+      // name: "shellModuleFederation",
+      // filename: "remoteEntry.js",
+      // exposes: {
+      //     './Component': './/src/app/app.component.ts',
+      // },
+
+      // For hosts (please adjust)
+      remotes: {
+        angular11ModuleFederation:
+          "angular11ModuleFederation@http://localhost:5000/remoteEntry.js",
+        mfe: "mfe1@http://localhost:3000/remoteEntry.js",
       },
 
       shared: share({
@@ -53,9 +59,9 @@ module.exports = {
           requiredVersion: "auto",
         },
 
-        //   ...sharedMappings.getDescriptors(),
+        ...sharedMappings.getDescriptors(),
       }),
     }),
-    // sharedMappings.getPlugin(),
+    sharedMappings.getPlugin(),
   ],
 };
