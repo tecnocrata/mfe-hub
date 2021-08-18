@@ -8,7 +8,7 @@ import {
   getSingleSpaExtraProviders,
 } from 'single-spa-angular';
 import { singleSpaPropsSubject } from '../../single-spa/single-spa-props';
-import { ɵAnimationEngine as AnimationEngine } from '@angular/animations/browser';
+// import { ɵAnimationEngine as AnimationEngine } from '@angular/animations/browser';
 
 if (environment.production) {
   enableProdMode();
@@ -25,7 +25,7 @@ const lifecycles = singleSpaAngular({
   Router,
   NavigationStart,
   NgZone,
-  AnimationEngine,
+  // AnimationEngine,
 });
 
 export const bootstrap = lifecycles.bootstrap;
