@@ -16,9 +16,8 @@ const routes: Routes = [
   //     import('angular11ModuleFederation/FModule').then((m) => m.FlightsModule),
   // },
   {
-    path: 'mfe',
-    // redirectTo: 'home',
-    loadChildren: () => import('mfe/Module').then((m) => m.FlightsModule),
+    path: 'flights',
+    loadChildren: () => import('mfe1/Module').then((m) => m.FlightsModule),
   },
 ];
 

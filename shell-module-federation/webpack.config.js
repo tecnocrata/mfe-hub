@@ -18,7 +18,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      ...sharedMappings.getAliases(),
+      // ...sharedMappings.getAliases(),
     },
   },
   plugins: [
@@ -34,33 +34,33 @@ module.exports = {
       remotes: {
         angular11ModuleFederation:
           "angular11ModuleFederation@http://localhost:5000/remoteEntry.js",
-        mfe: "mfe1@http://localhost:3000/remoteEntry.js",
+        mfe1: "mfe1@http://localhost:3000/remoteEntry.js",
       },
 
-      shared: share({
-        "@angular/core": {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: "auto",
-        },
-        "@angular/common": {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: "auto",
-        },
-        "@angular/common/http": {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: "auto",
-        },
-        "@angular/router": {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: "auto",
-        },
+      shared: {
+        //   "@angular/core": {
+        //     singleton: true,
+        //     strictVersion: true,
+        //     requiredVersion: "auto",
+        //   },
+        //   "@angular/common": {
+        //     singleton: true,
+        //     strictVersion: true,
+        //     requiredVersion: "auto",
+        //   },
+        //   "@angular/common/http": {
+        //     singleton: true,
+        //     strictVersion: true,
+        //     requiredVersion: "auto",
+        //   },
+        //   "@angular/router": {
+        //     singleton: true,
+        //     strictVersion: true,
+        //     requiredVersion: "auto",
+        //   },
 
         ...sharedMappings.getDescriptors(),
-      }),
+      },
     }),
     sharedMappings.getPlugin(),
   ],

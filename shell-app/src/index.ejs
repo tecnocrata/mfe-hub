@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Root Config with Single-Spa Routing layout</title>
@@ -78,7 +79,8 @@
         "@tecnox/root-config": "//localhost:9000/tecnox-root-config.js",
         "@tecnox/angular-application": "http://localhost:4202/main.js",
         "body":"http://localhost:3002/remoteEntry.js",
-        "Module":"http://localhost:5000/remoteEntry.js"
+        "FModule":"http://localhost:5000/remoteEntry.js",
+        "angularApp":"http://localhost:8083/remoteEntry.js"
       }
     }
   </script>

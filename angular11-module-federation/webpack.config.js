@@ -18,7 +18,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      ...sharedMappings.getAliases(),
+      // ...sharedMappings.getAliases(),
     },
   },
   plugins: [
@@ -28,34 +28,36 @@ module.exports = {
       // library: { type: "var", name: "angular11ModuleFederation" },
       filename: "remoteEntry.js",
       exposes: {
-        "./FModule": "./src/app/flights/flights.module.ts",
+        "./FModule": "./src/app/robot/robot.single-spa.ts",
       },
 
-      shared: share({
-        "@angular/core": {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: "auto",
-        },
-        "@angular/common": {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: "auto",
-        },
-        "@angular/common/http": {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: "auto",
-        },
-        "@angular/router": {
-          singleton: true,
-          strictVersion: true,
-          requiredVersion: "auto",
-        },
-
-        //   ...sharedMappings.getDescriptors(),
-      }),
+      shared: {
+        // "@angular/core": {
+        //   singleton: true,
+        //   strictVersion: true,
+        //   requiredVersion: "auto",
+        // },
+        // "@angular/common": {
+        //   singleton: true,
+        //   strictVersion: true,
+        //   requiredVersion: "auto",
+        // },
+        // "@angular/common/http": {
+        //   singleton: true,
+        //   strictVersion: true,
+        //   requiredVersion: "auto",
+        // },
+        // "@angular/router": {
+        //   singleton: true,
+        //   strictVersion: true,
+        //   requiredVersion: "auto",
+        // },
+        "@angular/core": { singleton: true, strictVersion: false },
+        "@angular/common": { singleton: true, strictVersion: false },
+        "@angular/router": { singleton: true, strictVersion: false },
+        ...sharedMappings.getDescriptors(),
+      },
     }),
-    // sharedMappings.getPlugin(),
+    sharedMappings.getPlugin(),
   ],
 };

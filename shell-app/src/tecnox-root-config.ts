@@ -24,10 +24,16 @@ registerApplication({
   app: () => import("vueapp/body"),
   activeWhen: ["/vuejs-module-federation"],
 });
+// registerApplication({
+//   name: "angular11-module-federation",
+//   // @ts-ignore
+//   app: () => import("angular11ModuleFederation/FModule"),
+//   activeWhen: ["/a11-module-federation"],
+// });
 registerApplication({
-  name: "angular11-module-federation",
+  name: "angularApp",
   // @ts-ignore
-  app: () => import("angular11app/Module"),
+  app: () => import("angularApp/ApplicationPage"),
   activeWhen: ["/a11-module-federation"],
 });
 layoutEngine.activate();

@@ -15,7 +15,7 @@
     "webpack": "5.27.2"
   },
   "dependencies": {
-    "@angular-architects/module-federation": "^12.4.0",
+    "@angular-architects/module-federation": "^1.2.4",
     "@angular/animations": "~11.2.14",
     "@angular/common": "~11.2.14",
     "@angular/compiler": "~11.2.14",
