@@ -17,18 +17,18 @@ registerApplication({
 
 // console.log("Loading Module Federation!");
 
-// registerApplication(
-//   "body",
-//   // @ts-ignore
-//   () => import("body"),
-//   (location) => location.pathname.startsWith("/vuejs-module-federation")
-// );
-
 registerApplication({
   name: "vue-module-federation",
   // @ts-ignore
   app: () => import("vueapp/body"),
   activeWhen: ["/vuejs-module-federation"],
+});
+
+registerApplication({
+  name: "angular11-module-federation",
+  // @ts-ignore
+  app: () => import("angular11ModuleFederation/FModule"),
+  activeWhen: ["/a11-module-federation"],
 });
 
 // registerApplication({
