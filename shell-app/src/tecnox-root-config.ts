@@ -37,8 +37,8 @@ registerApplication({
 //   // activeWhen: () => true
 // });
 registerApplication({
-  name: "@example/cookie-consent",
-  app: () => System.import("@example/cookie-consent"),
+  name: "cookie-consent",
+  app: () => System.import("cookie-consent"),
   activeWhen: ["/react-webcomponent"],
 });
 

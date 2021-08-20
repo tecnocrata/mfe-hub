@@ -10,8 +10,8 @@
     "single-spa-html": "^1.3.0"
   },
   "scripts": {
-    "start": "cp src/real-index.js src/index.js && react-scripts start",
-    "start:wc": "cp src/WebComponents.js src/index.js && react-scripts start",
+    "start": "cp src/real-index.js src/index.js && PORT=5001 react-scripts start",
+    "start:wc": "cp src/WebComponents.js src/index.js && PORT=5001 react-scripts start",
     "build": "cp src/real-index.js src/index.js && react-scripts build",
     "generate-wc": "cp src/WebComponents.js src/index.js && GENERATE_SOURCEMAP=false react-scripts build src/WebComponents.js",
     "package-wc": "rm -rf dist && mkdir dist && cat build/static/js/runtime-main.*.js > dist/react-contact-list.js && cat build/static/js/*.chunk.js >> dist/react-contact-list.js && cp build/static/css/main.*.css dist/react-contact-list.css",
