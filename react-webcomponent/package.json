@@ -1,39 +1,30 @@
 {
-  "name": "react-contact-list",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "identicon.js": "^2.3.3",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
-  },
+  "name": "basic-react-03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "cp src/real-index.js src/index.js && react-scripts start",
-    "start:wc": "cp src/WebComponents.js src/index.js && react-scripts start",
-    "build": "cp src/real-index.js src/index.js && react-scripts build",
-    "generate-wc": "cp src/WebComponents.js src/index.js && GENERATE_SOURCEMAP=false react-scripts build src/WebComponents.js",
-    "package-wc": "rm -rf dist && mkdir dist && cat build/static/js/runtime-main.*.js > dist/react-contact-list.js && cat build/static/js/*.chunk.js >> dist/react-contact-list.js && cp build/static/css/main.*.css dist/react-contact-list.css",
-    "copy-wc": "cp dist/* ../webcomponents-host/public/webcomponents",
-    "build-wc": "npm run generate-wc && npm run package-wc && npm run copy-wc",
-    "test": "cp src/real-index.js src/index.js && react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "webpack serve",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-web-component": "^2.0.2",
+    "react-web-component-style-loader": "^0.1.4-alpha",
+    "single-spa-html": "^1.3.0"
   },
-  "browserslist": {
-    "production": [
-      "last 2 Chrome versions",
-      "last 2 Firefox versions",
-      "last 2 Safari versions",
-      "last 2 Edge versions"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^4.0.0-beta.0"
+  }
 }

@@ -24,17 +24,19 @@ registerApplication({
   app: () => import("vueapp/body"),
   activeWhen: ["/vuejs-module-federation"],
 });
+
+registerApplication({
+  name: "cookie-consent",
+  app: () => System.import("cookie-consent"),
+  activeWhen: ["/react-webcomponent"],
+});
+
 registerApplication({
   name: "angular11-module-federation",
   // @ts-ignore
   app: () => import("angular11ModuleFederation/FModule"),
   activeWhen: ["/a11-module-federation"],
 });
-// registerApplication({
-//   name: "angularApp",
-//   // @ts-ignore
-//   app: () => import("angularApp/ApplicationPage"),
-//   activeWhen: ["/a11-module-federation"],
-// });
+
 layoutEngine.activate();
 start();
