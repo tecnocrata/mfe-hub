@@ -27,5 +27,9 @@
     "postcss": "^8.2.1",
     "single-spa-vue": "^2.1.0",
     "vue": "^3.0.0"
+  },
+  "engines": {
+    "node": "^14.17.0",
+    "npm": "please-use-yarn"
   }
 }
