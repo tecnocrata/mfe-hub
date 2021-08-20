@@ -10,7 +10,7 @@ import singleSpaHtml from "single-spa-html";
 
 class App extends React.Component {
   render() {
-    return <div>Hello World!</div>;
+    return <div>Hello World! React WebComponent</div>;
   }
 }
 
