@@ -28,7 +28,7 @@ module.exports = (webpackConfigEnv, argv) => {
         // filename: "remoteEntry.js",
         remotes: {
           // 'home-nav': 'navigation',
-          // body: "body@http://localhost:3002/remoteEntry.js",
+          // body: "body@http://localhost:5003/remoteEntry.js",
           vueapp: "body",
           angular11ModuleFederation: "angular11ModuleFederation",
         },

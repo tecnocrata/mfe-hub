@@ -16,7 +16,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: "http://localhost:3002/",
+    publicPath: "http://localhost:5003/",
     libraryTarget: "system",
   },
 

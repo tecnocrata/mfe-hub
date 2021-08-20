@@ -1,7 +1,7 @@
 {
   "name": "body",
   "scripts": {
-    "start": "webpack serve --port 3002",
+    "start": "webpack serve --port 5003",
     "build": "webpack --mode=production"
   },
   "version": "1.0.0",
