@@ -7,7 +7,7 @@ import mainModule from "./main-module.ts";
 import { Router } from "@angular/router";
 
 const ngLifecycles = singleSpaAngular({
-  //domElementGetter,
+  domElementGetter,
   mainModule,
   angularPlatform: platformBrowserDynamic(),
   template: `<app-root />`,

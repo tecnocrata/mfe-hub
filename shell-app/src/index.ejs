@@ -38,7 +38,7 @@
   <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
   <!-- More info at https://github.com/joeldenning/import-map-overrides/blob/master/docs/configuration.md#domain-list -->
   <!-- <meta name="import-map-overrides-domains" content="denylist:prod.example.com" /> -->
-  <!-- <script src="http://localhost:3002/remoteEntry.js"></script> -->
+  <!-- <script src="http://localhost:5003/remoteEntry.js"></script> -->
   <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
 
     1. System.register (preferred when possible) - https://github.com/systemjs/systemjs/blob/master/docs/system-register.md
@@ -52,7 +52,9 @@
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
         "vue": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js",
-        "vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.0.7/dist/vue-router.min.js"
+        "vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.0.7/dist/vue-router.min.js",
+        "react":"https://unpkg.com/react@16/umd/react.production.min.js",
+        "react-dom":"https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
       }
     }
   </script>
@@ -78,7 +80,8 @@
         "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
         "@tecnox/root-config": "//localhost:9000/tecnox-root-config.js",
         "@tecnox/angular-application": "http://localhost:4202/main.js",
-        "body":"http://localhost:3002/remoteEntry.js",
+        "@tecnox/react-application": "http://localhost:5004/enrique-react-application.js",
+        "body":"http://localhost:5003/remoteEntry.js",
         "angular11ModuleFederation":"http://localhost:5000/remoteEntry.js",
         "cookie-consent":"http://localhost:5001/src/index.js"
       }
@@ -183,7 +186,7 @@
           </li>
           <li class="mr-3 flex-1">
             <a href="#"
-              class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
+              class="block py-1 md:py-3 pl-1 align-middle no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
               <i class="fab fa-angular pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Simple</span>
             </a>
@@ -197,7 +200,7 @@
           </li>
           <li class="mr-3 flex-1">
             <a href="#" onclick="singleSpaNavigate('/angular-webcomponent')"
-              class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
+              class="block py-1 md:py-3 pl-1 align-middle no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
               <i class="fab fa-angular pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">WebComponent</span>
             </a>
@@ -212,13 +215,13 @@
           </li>
           <li class="mr-3 flex-1">
             <a href="#"
-              class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-blue-500">
+              class="block py-1 md:py-3 pl-1 align-middle no-underline hover:text-white border-b-2 border-gray-800 hover:border-blue-500">
               <i class="fab fa-react pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-white md:text-gray-400 block md:inline-block">Simple</span>
             </a>
           </li>
           <li class="mr-3 flex-1">
-            <a href="#"
+            <a href="#" onclick="singleSpaNavigate('/react-application')"
               class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-blue-500">
               <i class="fab fa-react pr-0 md:pr-3 "></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-white md:text-gray-400 block md:inline-block">Application</span>
@@ -226,21 +229,21 @@
           </li>
           <li class="mr-3 flex-1">
             <a href="#" onclick="singleSpaNavigate('/react-webcomponent')"
-              class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
+              class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-blue-500">
               <i class="fab fa-react pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">WebComponent</span>
             </a>
           </li>
           <li class="mr-3 flex-1">
             <a href="#"
-              class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
+              class="block py-1 md:py-3 pl-0 md:pl-1 align-middle no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
               <i class="fab fa-vuejs pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Application</span>
             </a>
           </li>
           <li class="mr-3 flex-1">
             <a href="#"
-              class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
+              class="block py-1 md:py-3 pl-0 md:pl-1 align-middle no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
               <i class="fab fa-vuejs pr-0 md:pr-3"></i><span
                 class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">WebComponent</span>
             </a>
