@@ -24,11 +24,13 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       // For remotes (please adjust)
-      // name: "angular12",
-      // filename: "remoteEntry.js",
-      // exposes: {
-      //     './Component': './/src/app/app.component.ts',
-      // },
+      name: "angular12",
+      filename: "remoteEntry.js",
+      exposes: {
+        // "./PlayEditor":
+        //   "./src/app/editors/play-editor/play-editor.component.ts",
+        "./EditorsModule": "./src/app/editors/editors.module.ts",
+      },
 
       // For hosts (please adjust)
       // remotes: {
