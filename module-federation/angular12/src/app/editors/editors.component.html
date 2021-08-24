@@ -1,6 +1,6 @@
 <!-- THIS IS JUST THE EDITOR LAYOUT!!! -->
 <div class="row">
-  <div
+  <!-- <div
     class="column width:20%; bg-blue-800 shadow-xl h-16 fixed bottom-0 mt-12 md:relative md:h-screen z-10 w-full md:w-48">
 
     <div class="md:mt-12 md:w-50 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
@@ -22,7 +22,13 @@
         </li>
       </ul>
     </div>
+  </div> -->
+  <div class="topnav">
+    <!-- <a class="active" href="#home">Home</a> -->
+    <a routerLinkActive="active" routerLink="/editors/playeditor">Play Editor</a>
+    <a routerLinkActive="active" routerLink="/editors/annotationeditor">Annotation Editor</a>
   </div>
+
   <div class="column width:80% editor-content" fxFlex>
     <router-outlet></router-outlet>
   </div>
