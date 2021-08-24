@@ -5,7 +5,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   {
-    path: 'angular-12',
+    path: 'editors', // This route path should be the same than MFE exported and used in the MFE
     loadChildren: () =>
       loadRemoteModule({
         remoteEntry: 'http://localhost:6001/remoteEntry.js',
