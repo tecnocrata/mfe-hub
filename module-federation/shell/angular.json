@@ -67,7 +67,7 @@
         "serve": {
           "builder": "ngx-build-plus:dev-server",
           "options": {
-            "port": 6000,
+            "port": 6999,
             "extraWebpackConfig": "webpack.config.js"
           },
           "configurations": {
