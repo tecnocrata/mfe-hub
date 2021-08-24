@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { ExternalsRoutingModule } from './externals-routing.module';
 import { ExternalsComponent } from './externals.component';
+import { SsaiIntegrationComponent } from './ssai-integration/ssai-integration.component';
+import { HelpIntegrationComponent } from './help-integration/help-integration.component';
 
 
 @NgModule({
   declarations: [
-    ExternalsComponent
+    ExternalsComponent,
+    SsaiIntegrationComponent,
+    HelpIntegrationComponent
   ],
   imports: [
     CommonModule,
