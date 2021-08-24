@@ -9,6 +9,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./editors/editors.module').then((m) => m.EditorsModule),
   },
+  {
+    path: 'externals',
+    loadChildren: () =>
+      import('./externals/externals.module').then((m) => m.ExternalsModule),
+  },
 ];
 
 @NgModule({
