@@ -13,6 +13,15 @@ const routes: Routes = [
         exposedModule: './EditorsModule',
       }).then((m) => m.EditorsModule),
   },
+  {
+    path: 'integrations', // This route path anything because the MFE module doesn't contains the componentes within a parent route
+    loadChildren: () =>
+      loadRemoteModule({
+        remoteEntry: 'http://localhost:6001/remoteEntry.js',
+        remoteName: 'angular12',
+        exposedModule: './ExternalsModule',
+      }).then((m) => m.ExternalsModule),
+  },
   { path: 'welcome', component: WelcomeComponent },
   { path: '', component: WelcomeComponent },
 ];

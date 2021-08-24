@@ -30,6 +30,7 @@ module.exports = {
         // "./PlayEditor":
         //   "./src/app/editors/play-editor/play-editor.component.ts",
         "./EditorsModule": "./src/app/editors/editors.module.ts",
+        "./ExternalsModule": "./src/app/externals/externals.module.ts",
       },
 
       // For hosts (please adjust)
