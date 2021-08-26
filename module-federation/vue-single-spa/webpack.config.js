@@ -17,7 +17,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: "http://localhost:5003/",
+    publicPath: "http://localhost:6002/",
     // libraryTarget: "system",
   },
 
@@ -67,19 +67,20 @@ module.exports = {
 
   plugins: [
     new VueLoaderPlugin(),
-    new htmlWebpackPlugin({
-      template: path.resolve(__dirname, "public", "index.html"),
-      favicon: "./public/favicon.ico",
+    new ModuleFederationPlugin({
+      name: "body",
+      library: { type: "var", name: "body" },
+      filename: "remoteEntry.js",
+      // remotes: {},
+      exposes: {
+        "./body": "./src/app",
+        "./mountAbout": "./src/components/about",
+      },
+      shared: ["vue", "single-spa-vue"], //"single-spa",
     }),
-    // new ModuleFederationPlugin({
-    //   name: "body",
-    //   library: { type: "var", name: "body" },
-    //   filename: "remoteEntry.js",
-    //   // remotes: {},
-    //   exposes: {
-    //     "./body": "./src/app",
-    //   },
-    //   shared: ["vue", "single-spa-vue"], //"single-spa",
+    // new htmlWebpackPlugin({
+    //   template: path.resolve(__dirname, "public", "index.html"),
+    //   favicon: "./public/favicon.ico",
     // }),
   ],
 };

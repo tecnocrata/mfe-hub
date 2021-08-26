@@ -22,6 +22,16 @@ const routes: Routes = [
         exposedModule: './ExternalsModule',
       }).then((m) => m.ExternalsModule),
   },
+  {
+    path: 'analytics', // This route path anything because the MFE module doesn't contains the componentes within a parent route
+    loadChildren: () =>
+      loadRemoteModule({
+        remoteEntry: 'http://localhost:6002/remoteEntry.js',
+        remoteName: 'body',
+
+        exposedModule: './body',
+      }).then((m) => m.default), // Why default? it is because is the default module name
+  },
   { path: 'welcome', component: WelcomeComponent },
   { path: '', component: WelcomeComponent },
 ];
