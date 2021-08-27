@@ -12,9 +12,9 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
     // mountAbout('#about');
-    import('body/mountAbout').then((mountHeader) => {
-      console.log('Mounting!!!! ', mountHeader);
-      mountHeader.default('#about');
-    });
+    // import('body/mountAbout').then((mountHeader) => {
+    //   console.log('Mounting!!!! ', mountHeader);
+    //   mountHeader.default('#about');
+    // });
   }
 }
