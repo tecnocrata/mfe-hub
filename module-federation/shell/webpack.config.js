@@ -32,7 +32,7 @@ module.exports = {
 
       // For hosts (please adjust)
       remotes: {
-        body: "body@http://localhost:6002/remoteEntry.js",
+        VueAppRemote: "VueApp@http://localhost:6002/remoteEntry.js",
       },
 
       shared: share({

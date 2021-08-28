@@ -1,1 +1,1 @@
-declare module 'body/mountAbout';
+declare module 'VueAppRemote/mountAbout';

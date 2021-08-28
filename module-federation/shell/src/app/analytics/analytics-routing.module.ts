@@ -24,7 +24,7 @@ const routes: Routes = [
         loadChildren: () =>
           loadRemoteModule({
             remoteEntry: 'http://localhost:6002/remoteEntry.js',
-            remoteName: 'body',
+            remoteName: 'VueAppRemote',
             exposedModule: './body',
           }).then((m) => {
             return m.default;

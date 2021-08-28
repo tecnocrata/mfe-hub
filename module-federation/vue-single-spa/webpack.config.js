@@ -68,8 +68,8 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
-      name: "body",
-      library: { type: "var", name: "body" },
+      name: "VueApp",
+      library: { type: "var", name: "VueApp" },
       filename: "remoteEntry.js",
       // remotes: {},
       exposes: {

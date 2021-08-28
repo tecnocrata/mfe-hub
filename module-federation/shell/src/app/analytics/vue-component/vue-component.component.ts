@@ -9,7 +9,7 @@ export class VueComponentComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    import('body/mountAbout').then((mountHeader) => {
+    import('VueAppRemote/mountAbout').then((mountHeader) => {
       console.log('Mounting!!!! ', mountHeader);
       mountHeader.default('#about');
     });
