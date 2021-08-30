@@ -1,24 +1,40 @@
 <template>
-  <div class="body">
-    <div class="inner">Integration Analysis using Vuejs</div>
+  <div id="app">
+    <div class="nav">
+      <router-link to="/">Home!</router-link>|<router-link to="/about"
+        >About</router-link
+      >
+    </div>
+    <router-view />
   </div>
 </template>
 
-<style scoped lang="scss">
-.body {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+:root {
+  --font: Roboto, sans-serif;
+  --textColor: #374961;
+  --linkActiveColor: #41b783;
 }
-
-.inner {
-  width: 300px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #42b983;
-  color: #ffffff;
+#app {
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: var(--textColor);
+  .logo {
+    width: 20%;
+  }
+}
+.nav {
+  padding: 30px 0 100px 0;
+  a {
+    font-weight: 500;
+    color: var(--textColor);
+    margin: 0 5px;
+  }
+  a.router-link-exact-active {
+    color: var(--linkActiveColor);
+  }
 }
 </style>

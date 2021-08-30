@@ -1,3 +1,4 @@
+// specific file created for exposing default method
 import { createApp } from "vue";
 import Header from "./About.vue";
 

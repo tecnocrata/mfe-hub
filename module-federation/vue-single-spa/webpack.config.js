@@ -75,8 +75,9 @@ module.exports = {
       exposes: {
         "./body": "./src/app",
         "./mountAbout": "./src/components/about",
+        "./mountApp": "./src/app-remote",
       },
-      shared: ["vue", "single-spa-vue"], //"single-spa",
+      shared: ["vue", "vue-router", "single-spa-vue"], //"single-spa",
     }),
     // new htmlWebpackPlugin({
     //   template: path.resolve(__dirname, "public", "index.html"),

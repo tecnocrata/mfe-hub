@@ -9,9 +9,13 @@ export class VueComponentComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    import('VueAppRemote/mountAbout').then((mountHeader) => {
-      console.log('Mounting!!!! ', mountHeader);
-      mountHeader.default('#about');
+    // import('VueAppRemote/mountAbout').then((mountHeader) => {
+    //   console.log('Mounting!!!! ', mountHeader);
+    //   mountHeader.default('#about');
+    // });
+    import('VueAppRemote/mountApp').then((mountApp) => {
+      console.log('Mounting!!!! ', mountApp);
+      mountApp.default('#about');
     });
   }
 }
