@@ -15,7 +15,7 @@ export class VueComponentComponent implements OnInit {
     // });
     import('VueAppRemote/mountApp').then((mountApp) => {
       console.log('Mounting!!!! ', mountApp);
-      mountApp.default('#about');
+      mountApp.default('#myvueapp');
     });
   }
 }
