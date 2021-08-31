@@ -1,8 +1,6 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import { createWebHistory, createRouter } from "vue-router";
 import Home from "../components/Home.vue";
-
-Vue.use(VueRouter);
+import About from "../components/About.vue";
 
 const routes = [
   {
@@ -13,14 +11,39 @@ const routes = [
   {
     path: "/about",
     name: "About",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../components/About.vue"),
+    component: About,
   },
 ];
 
-const router = new VueRouter({
-  mode: "history",
+const router = createRouter({
+  history: createWebHistory(),
   routes,
 });
 
 export default router;
+// import Vue from "vue";
+// import VueRouter from "vue-router";
+// import Home from "../components/Home.vue";
+
+// Vue.use(VueRouter);
+
+// const routes = [
+//   {
+//     path: "/",
+//     name: "Home",
+//     component: Home,
+//   },
+//   {
+//     path: "/about",
+//     name: "About",
+//     component: () =>
+//       import(/* webpackChunkName: "about" */ "../components/About.vue"),
+//   },
+// ];
+
+// const router = new VueRouter({
+//   mode: "history",
+//   routes,
+// });
+
+// export default router;
