@@ -78,6 +78,18 @@ module.exports = {
         "./mountApp": "./src/app-remote",
       },
       // shared: ["vue", "vue-router", "single-spa-vue"], //"single-spa",
+      shared: {
+        vue: {
+          singleton: true,
+          strictVersion: true,
+          // requiredVersion: "auto",
+        },
+        "vue-router": {
+          singleton: true,
+          strictVersion: true,
+          // requiredVersion: "auto",
+        },
+      },
     }),
     // new htmlWebpackPlugin({
     //   template: path.resolve(__dirname, "public", "index.html"),

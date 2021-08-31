@@ -61,7 +61,16 @@ module.exports = {
         // "@angular/common": { requiredVersion: '12.0.0' },
         // "@angular/common/http": { requiredVersion: '12.0.0' },
         // "@angular/router": { requiredVersion: '12.0.0' },
-
+        vue: {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
+        "vue-router": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
         ...sharedMappings.getDescriptors(),
       }),
     }),
