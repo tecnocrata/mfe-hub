@@ -10,7 +10,7 @@ sharedMappings.register(path.join(__dirname, "tsconfig.json"), [
 
 module.exports = {
   output: {
-    uniqueName: "shell",
+    uniqueName: "cxspoc",
     publicPath: "auto",
   },
   optimization: {
@@ -24,11 +24,11 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       // For remotes (please adjust)
-      // name: "shell",
-      // filename: "remoteEntry.js",
-      // exposes: {
-      //     './Component': './/src/app/app.component.ts',
-      // },
+      name: "cxspoc",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./MainModule": "./src/app/app-remote.module.ts",
+      },
 
       // For hosts (please adjust)
       remotes: {
