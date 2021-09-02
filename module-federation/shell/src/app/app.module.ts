@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRemoteModule } from './app-remote.module';
+import { createCustomElement } from '@angular/elements';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,4 +32,11 @@ export class AppModule { }
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap() {
+    const ce = createCustomElement(AppComponent, { injector: this.injector });
+    customElements.define('cxspoc-element', ce);
+  }
+}

@@ -27,7 +27,7 @@ module.exports = {
       name: "cxspoc",
       filename: "remoteEntry.js",
       exposes: {
-        "./MainModule": "./src/app/app-remote.module.ts",
+        "./MainModule": "./src/bootstrap.ts",
       },
 
       // For hosts (please adjust)
@@ -37,23 +37,23 @@ module.exports = {
 
       shared: share({
         "@angular/core": {
-          singleton: true,
-          strictVersion: true,
+          singleton: false,
+          strictVersion: false,
           requiredVersion: "auto",
         },
         "@angular/common": {
-          singleton: true,
-          strictVersion: true,
+          singleton: false,
+          strictVersion: false,
           requiredVersion: "auto",
         },
         "@angular/common/http": {
-          singleton: true,
-          strictVersion: true,
+          singleton: false,
+          strictVersion: false,
           requiredVersion: "auto",
         },
         "@angular/router": {
-          singleton: true,
-          strictVersion: true,
+          singleton: false,
+          strictVersion: false,
           requiredVersion: "auto",
         },
 
