@@ -5,11 +5,14 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
+      # POSTGRES_DB: mydb
       POSTGRES_HOST_AUTH_METHOD: trust
     image: "postgres:11-alpine"
     restart: always
     volumes:
       - "${PWD}/pgdata:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
   web:
     build:
       context: .
@@ -25,5 +28,17 @@ services:
       - "4000:4000"
     volumes:
       - ${PWD}/code:/app
+  pgadmin:
+    container_name: pgadmin4_container #without it could be service_pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    volumes:
+      - "${PWD}/pgadmindata/admin:/var/lib/pgadmin"
+      - "${PWD}/pgadmindata/servers.json:/pgadmin4/servers.json"
+    ports:
+      - "5050:80"
 # volumes:
 #   ${PWD}/pgdata:
