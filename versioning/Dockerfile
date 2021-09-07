@@ -17,3 +17,4 @@ FROM develop as build
 # COPY assets/package-lock.json assets
 
 CMD mix deps.get && cd assets && npm install && cd .. && mix phx.server
+# CMD ["/app/entrypoint.sh"]

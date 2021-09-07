@@ -40,4 +40,11 @@ defmodule AppWeb.Mfe_VerController do
       send_resp(conn, :no_content, "")
     end
   end
+
+  def getmfe(conn, param) do
+  #manipulate as desired
+    IO.puts "Demooo"
+    mfe__ver = Catalog.get_mfe__ver!(1)
+    render(conn, "show.json", mfe__ver: mfe__ver)
+  end
 end
