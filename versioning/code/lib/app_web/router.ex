@@ -23,6 +23,7 @@ defmodule AppWeb.Router do
   scope "/api", AppWeb do
     pipe_through :api
     resources "/mfes", MfeController, except: [:new, :edit]
+    resources "/mfe_vers", Mfe_VerController, except: [:new, :edit]
   end
 
   # Enables LiveDashboard only for development
