@@ -40,4 +40,14 @@ defmodule AppWeb.MfeController do
       send_resp(conn, :no_content, "")
     end
   end
+
+  def getmfe2(conn, param) do
+  #manipulate as desired
+    IO.puts "Demooo"
+    # mfe__ver = Catalog.get_mfe__ver!(1)
+    # render(conn, "show.json", mfe__ver: mfe__ver)
+    # mfe__ver = Catalog.get_mfe_by_version!("vueeditor","current", "100")
+    mfe = Catalog.get_mfe_by_version("angular11-rc","preview", "100")
+    render(conn, "show.json", mfe: mfe)
+  end
 end

@@ -22,8 +22,8 @@ defmodule AppWeb.Router do
   # Other scopes may use custom stacks.
   scope "/api", AppWeb do
     pipe_through :api
+    get "/mfe_vers/mfe", MfeController, :getmfe2 #, as: :getmfe
     resources "/mfes", MfeController, except: [:new, :edit]
-    get "/mfe_vers/mfe", Mfe_VerController, :getmfe #, as: :getmfe
     resources "/mfe_vers", Mfe_VerController, except: [:new, :edit, :show] do # excluding get by id (show)
       # get "/mfe", Mfe_VerController, :getmfe #, as: :getmfe
     end

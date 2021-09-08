@@ -21,6 +21,20 @@ defmodule App.Catalog do
     Repo.all(Mfe)
   end
 
+  def get_mfe_by_version2(name, version, tenant) do
+    query = from v in Mfe_Ver, join: m in Mfe, on: m.id == v.mfes_id, 
+            where: v.name == ^name and v.tenant== ^tenant and v.version == ^version,
+            select: m
+    Repo.one (query)
+
+    # Mfe_Ver
+    # |> where([v], v.name == ^name and v.tenant== ^tenant and v.version == ^version)
+    # |> join(:inner, [v],  m in Mfe, on: m.id == v.mfes_id)
+    # |> select([m],m)
+    # |> Repo.one 
+
+  end
+
   @doc """
   Gets a single mfe.
 
@@ -102,6 +116,7 @@ defmodule App.Catalog do
     Mfe.changeset(mfe, attrs)
   end
 
+
   alias App.Catalog.Mfe_Ver
 
   @doc """
@@ -135,8 +150,17 @@ defmodule App.Catalog do
 
 
   def get_mfe_by_version(name, version, tenant) do
-    from(v in Mfe_Ver, where: v.name == ^name and v.tenant== ^tenant and v.version == ^version) 
-    |> Repo.one
+    query = from v in Mfe_Ver, join: m in Mfe, on: m.id == v.mfes_id, 
+            where: v.name == ^name and v.tenant== ^tenant and v.version == ^version,
+            select: m
+    Repo.one (query)
+
+    # Mfe_Ver
+    # |> where([v], v.name == ^name and v.tenant== ^tenant and v.version == ^version)
+    # |> join(:inner, [v],  m in Mfe, on: m.id == v.mfes_id)
+    # |> select([m],m)
+    # |> Repo.one 
+
   end
 
   @doc """
