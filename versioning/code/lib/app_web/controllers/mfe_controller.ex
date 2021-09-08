@@ -41,9 +41,18 @@ defmodule AppWeb.MfeController do
     end
   end
 
+  def getmfe2(conn, %{"name" => name, "tenant" => tenant, "version" => version}) do
+  #manipulate as desired
+    # mfe__ver = Catalog.get_mfe__ver!(1)
+    # render(conn, "show.json", mfe__ver: mfe__ver)
+    # mfe__ver = Catalog.get_mfe_by_version!("vueeditor","current", "100")
+    mfe = Catalog.get_mfe_by_version2(name,version, tenant)
+    render(conn, "show.json", mfe: mfe)
+  end
+
   def getmfe2(conn, param) do
   #manipulate as desired
-    IO.puts "Demooo"
+    IO.inspect param
     # mfe__ver = Catalog.get_mfe__ver!(1)
     # render(conn, "show.json", mfe__ver: mfe__ver)
     # mfe__ver = Catalog.get_mfe_by_version!("vueeditor","current", "100")
