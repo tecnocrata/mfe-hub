@@ -21,7 +21,7 @@ defmodule App.Catalog do
     Repo.all(Mfe)
   end
 
-  def get_mfe_by_version2(name, version, tenant) do
+  def get_mfe_by_version(name, version, tenant) do
     query = from v in Mfe_Ver, join: m in Mfe, on: m.id == v.mfes_id, 
             where: v.name == ^name and v.tenant== ^tenant and v.version == ^version,
             select: m
@@ -149,7 +149,7 @@ defmodule App.Catalog do
   def get_mfe__ver!(id), do: Repo.get!(Mfe_Ver, id)
 
 
-  def get_mfe_by_version(name, version, tenant) do
+  def get_mfe_by_version2(name, version, tenant) do
     query = from v in Mfe_Ver, join: m in Mfe, on: m.id == v.mfes_id, 
             where: v.name == ^name and v.tenant== ^tenant and v.version == ^version,
             select: m
