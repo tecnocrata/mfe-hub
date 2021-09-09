@@ -51,11 +51,13 @@ defmodule AppWeb.MfeController do
 
   def getmfe2(conn, param) do
   #manipulate as desired
-    IO.inspect param["name"]
+    # IO.inspect param["name"]
     name = param["name"]
     version = param["version"]
     tenant = param["tenant"]
-    version = if is_nil(version), do: "current", else: version
+    v = Catalog.getcurrenMfeVersion(name)
+    IO.inspect "ACTIVE VERSION " <> v
+    version = if is_nil(version), do: v, else: version
     # mfe = Catalog.get_mfe_by_version2("angular11-rc","preview", "100")
     # render(conn, "show.json", mfe: mfe)
     mfe = Catalog.get_mfe_by_version2(name,version, tenant)

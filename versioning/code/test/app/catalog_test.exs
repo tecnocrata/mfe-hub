@@ -339,4 +339,65 @@ defmodule App.CatalogTest do
       assert %Ecto.Changeset{} = Catalog.change_mfe(mfe)
     end
   end
+
+  describe "mfeconfigs" do
+    alias App.Catalog.MfeConfig
+
+    @valid_attrs %{active_version: "some active_version", name: "some name"}
+    @update_attrs %{active_version: "some updated active_version", name: "some updated name"}
+    @invalid_attrs %{active_version: nil, name: nil}
+
+    def mfe_config_fixture(attrs \\ %{}) do
+      {:ok, mfe_config} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Catalog.create_mfe_config()
+
+      mfe_config
+    end
+
+    test "list_mfeconfigs/0 returns all mfeconfigs" do
+      mfe_config = mfe_config_fixture()
+      assert Catalog.list_mfeconfigs() == [mfe_config]
+    end
+
+    test "get_mfe_config!/1 returns the mfe_config with given id" do
+      mfe_config = mfe_config_fixture()
+      assert Catalog.get_mfe_config!(mfe_config.id) == mfe_config
+    end
+
+    test "create_mfe_config/1 with valid data creates a mfe_config" do
+      assert {:ok, %MfeConfig{} = mfe_config} = Catalog.create_mfe_config(@valid_attrs)
+      assert mfe_config.active_version == "some active_version"
+      assert mfe_config.name == "some name"
+    end
+
+    test "create_mfe_config/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Catalog.create_mfe_config(@invalid_attrs)
+    end
+
+    test "update_mfe_config/2 with valid data updates the mfe_config" do
+      mfe_config = mfe_config_fixture()
+      assert {:ok, %MfeConfig{} = mfe_config} = Catalog.update_mfe_config(mfe_config, @update_attrs)
+      assert mfe_config.active_version == "some updated active_version"
+      assert mfe_config.name == "some updated name"
+    end
+
+    test "update_mfe_config/2 with invalid data returns error changeset" do
+      mfe_config = mfe_config_fixture()
+      assert {:error, %Ecto.Changeset{}} = Catalog.update_mfe_config(mfe_config, @invalid_attrs)
+      assert mfe_config == Catalog.get_mfe_config!(mfe_config.id)
+    end
+
+    test "delete_mfe_config/1 deletes the mfe_config" do
+      mfe_config = mfe_config_fixture()
+      assert {:ok, %MfeConfig{}} = Catalog.delete_mfe_config(mfe_config)
+      assert_raise Ecto.NoResultsError, fn -> Catalog.get_mfe_config!(mfe_config.id) end
+    end
+
+    test "change_mfe_config/1 returns a mfe_config changeset" do
+      mfe_config = mfe_config_fixture()
+      assert %Ecto.Changeset{} = Catalog.change_mfe_config(mfe_config)
+    end
+  end
 end

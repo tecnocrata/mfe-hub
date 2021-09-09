@@ -229,4 +229,108 @@ defmodule App.Catalog do
   end
 
   
+
+  alias App.Catalog.MfeConfig
+
+  @doc """
+  Returns the list of mfeconfigs.
+
+  ## Examples
+
+      iex> list_mfeconfigs()
+      [%MfeConfig{}, ...]
+
+  """
+  def list_mfeconfigs do
+    Repo.all(MfeConfig)
+  end
+
+  @doc """
+  Gets a single mfe_config.
+
+  Raises `Ecto.NoResultsError` if the Mfe config does not exist.
+
+  ## Examples
+
+      iex> get_mfe_config!(123)
+      %MfeConfig{}
+
+      iex> get_mfe_config!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_mfe_config!(id), do: Repo.get!(MfeConfig, id)
+
+  @doc """
+  Creates a mfe_config.
+
+  ## Examples
+
+      iex> create_mfe_config(%{field: value})
+      {:ok, %MfeConfig{}}
+
+      iex> create_mfe_config(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_mfe_config(attrs \\ %{}) do
+    %MfeConfig{}
+    |> MfeConfig.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a mfe_config.
+
+  ## Examples
+
+      iex> update_mfe_config(mfe_config, %{field: new_value})
+      {:ok, %MfeConfig{}}
+
+      iex> update_mfe_config(mfe_config, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_mfe_config(%MfeConfig{} = mfe_config, attrs) do
+    mfe_config
+    |> MfeConfig.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a mfe_config.
+
+  ## Examples
+
+      iex> delete_mfe_config(mfe_config)
+      {:ok, %MfeConfig{}}
+
+      iex> delete_mfe_config(mfe_config)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_mfe_config(%MfeConfig{} = mfe_config) do
+    Repo.delete(mfe_config)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking mfe_config changes.
+
+  ## Examples
+
+      iex> change_mfe_config(mfe_config)
+      %Ecto.Changeset{data: %MfeConfig{}}
+
+  """
+  def change_mfe_config(%MfeConfig{} = mfe_config, attrs \\ %{}) do
+    MfeConfig.changeset(mfe_config, attrs)
+  end
+
+  def getcurrenMfeVersion(name) do
+    query = from c in MfeConfig,
+            where: c.name == ^name,
+            select: c
+    item = Repo.one (query)
+    item.active_version
+  end
 end
