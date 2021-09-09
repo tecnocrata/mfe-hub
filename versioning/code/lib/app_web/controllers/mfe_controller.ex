@@ -42,21 +42,25 @@ defmodule AppWeb.MfeController do
   end
 
   def getmfe2(conn, %{"name" => name, "tenant" => tenant, "version" => version}) do
-  #manipulate as desired
-    # mfe__ver = Catalog.get_mfe__ver!(1)
-    # render(conn, "show.json", mfe__ver: mfe__ver)
-    # mfe__ver = Catalog.get_mfe_by_version!("vueeditor","current", "100")
     mfe = Catalog.get_mfe_by_version2(name,version, tenant)
-    render(conn, "show.json", mfe: mfe)
+    # render(conn, "show.json", mfe: mfe)
+    conn
+    |> redirect(external: mfe.urladdress) #mfe.urladdress
+    |> Plug.Conn.halt()
   end
 
   def getmfe2(conn, param) do
   #manipulate as desired
-    IO.inspect param
-    # mfe__ver = Catalog.get_mfe__ver!(1)
-    # render(conn, "show.json", mfe__ver: mfe__ver)
-    # mfe__ver = Catalog.get_mfe_by_version!("vueeditor","current", "100")
-    mfe = Catalog.get_mfe_by_version2("angular11-rc","preview", "100")
-    render(conn, "show.json", mfe: mfe)
+    IO.inspect param["name"]
+    name = param["name"]
+    version = param["version"]
+    tenant = param["tenant"]
+    version = if is_nil(version), do: "current", else: version
+    # mfe = Catalog.get_mfe_by_version2("angular11-rc","preview", "100")
+    # render(conn, "show.json", mfe: mfe)
+    mfe = Catalog.get_mfe_by_version2(name,version, tenant)
+    conn
+    |> redirect(external: mfe.urladdress) #mfe.urladdress
+    # |> Plug.Conn.halt()
   end
 end
