@@ -32,7 +32,11 @@ module.exports = {
 
       // For hosts (please adjust)
       remotes: {
-        VueAppRemote: "VueApp@http://localhost:6002/remoteEntry.js",
+        // This is used without versioning
+        // VueAppRemote: "VueApp@http://localhost:6002/remoteEntry.js",
+        // This is used with versioning
+        VueAppRemote:
+          "VueApp@http://localhost:4000/api/mfe_vers/mfe?name=hours-editor-vue&tenant=100",
       },
 
       shared: share({
