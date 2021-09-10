@@ -1,0 +1,19 @@
+{
+  "name": "mfe-hub-module-federation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:shell": "cd shell && yarn start",
+    "start:angular12": "cd angular12 && yarn start",
+    "start:vue": "cd vue3 && yarn start",
+    "start:all": "concurrently \"yarn run start:shell\" \"yarn run start:angular12\" \"yarn run start:vue\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^6.0.2"
+  }
+}
