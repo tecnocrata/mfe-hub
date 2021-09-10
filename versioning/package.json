@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:shell": "cd shell && yarn start",
-    "start:angular12": "cd angular12 && yarn start",
-    "start:vue": "cd vue3 && yarn start",
-    "start:all": "concurrently \"yarn run start:shell\" \"yarn run start:angular12\" \"yarn run start:vue\""
+    "start:dockercompose": "docker-compose up -d",
+    "start:angula11_v2": "cd app2-angular-11.0.0-rc.0 && yarn start",
+    "start:vue3_v2": "cd vue3 && yarn start",
+    "start:all": "concurrently \"yarn run start:dockercompose\" \"yarn run start:angula11_v2\" \"yarn run start:vue3_v2\""
   },
   "keywords": [],
   "author": "",
