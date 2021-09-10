@@ -1,0 +1,22 @@
+{
+  "name": "mfe-hub-single-spa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:shell": "cd shell-app && yarn start",
+    "start:angular_app": "cd angular-application && yarn run serve:single-spa",
+    "start:react_mfe": "cd react-webcomponent && yarn run dev",
+    "start:vue_mfe": "cd vuejs-module-federation && yarn start",
+    "start:react_app": "cd react-application && yarn start",
+    "start:angular11_mfe": "cd angular11-module-federation && npx ng serve",
+    "start:all": "concurrently \"start:shell\" \"start:angular_app\" \"start:react_mfe\" \"start:vue_mfe\" \"start:react_app\" \"start:angular11_mfe\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^6.0.2"
+  }
+}
