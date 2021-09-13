@@ -41,8 +41,8 @@ module.exports = {
 
       shared: share({
         "@angular/core": {
-          singleton: false,
-          strictVersion: false,
+          singleton: false, // TODO: #3 change to true
+          strictVersion: false, // TODO: #4 enable it too
           requiredVersion: "auto",
         },
         "@angular/common": {
