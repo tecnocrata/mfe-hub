@@ -30,7 +30,7 @@ export class AppModule { }
   ],
   imports: [BrowserModule, AppRemoteModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent], //AppComponent
 })
 export class AppModule {
   constructor(private injector: Injector) {}
